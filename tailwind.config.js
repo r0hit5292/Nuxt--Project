@@ -2,10 +2,15 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        headline: ['Roboto']
+        }
+    },
+    
+    
   },
   plugins: [],
-  fontFamily: {
-    'custom': ['Roboto', 'sans-serif'],
-},
 }
+
+

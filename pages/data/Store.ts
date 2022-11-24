@@ -4,7 +4,7 @@ const state = {
   Data: ""
 }
 
-export const useDataStore = defineStore("Data", {
+export const DataStore = defineStore("Data", {
   state: () => state,
   actions: {
     setMyData(data: any) {

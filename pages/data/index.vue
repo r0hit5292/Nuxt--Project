@@ -6,16 +6,15 @@
     <button @click="Submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:ring-4 focus:outline-none focus:ring-blue-300">
  Submit
 </button>
-<nuxt-link to="/data/list" class=" text-red-500  hover:text-blue-700 absolute right-8 top-24"> Show list</nuxt-link>
+<nuxt-link to="/data/list" class=" text-blue-300 hover:text-blue-700 absolute right-8 top-4"> Show list</nuxt-link>
       
 </template>
 <script setup lang="ts">
 
-
+import { DataStore } from './Store'
   
-  let Data = ref<{TitleOfTask:string,Description:string}[]>([
-    
-   ]); 
+  let Data = ref<{TitleOfTask:string,Description:string}[]>([]); 
+  const store =DataStore();
 const TitleOfTask =ref<string>("");
     const Description =ref<string>("");
 function Submit(){
@@ -27,10 +26,12 @@ else if(!Description.value){
     alert("please describe task also")
 }
 else{
-    Data.value.push(TitleOfTask.value,Description.value);
-}
-console.log(Data.value.length);
-TitleOfTask.value =="";
+    Data.value.push({TitleOfTask:TitleOfTask.value,Description:Description.value}); //pushing data into array
+    TitleOfTask.value ="";
 Description.value ="";
+}
+store.setMyData(Data.value)
+
+
 }
 </script>
