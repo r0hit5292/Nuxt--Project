@@ -1,18 +1,18 @@
 import { defineStore } from "pinia";
 
 const state = {
-  Data: ""
+  Data:[{TitleOfTask:"",Description:""}]
 }
 
 export const DataStore = defineStore("Data", {
   state: () => state,
   actions: {
-    setMyData(data: any) {
+    setMyData(data: {TitleOfTask:string,Description:string}[]) {
       this.Data = data
     }
   },
   getters: {
-    getMyData(): any {
+    getMyData(): {TitleOfTask:string,Description:string}[] {
       return this.Data
     }
   }
