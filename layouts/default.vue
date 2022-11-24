@@ -1,6 +1,6 @@
 <!-- Defining Layout of project -->
 <template>
-  <div>
+  <div class=" font-['Roboto']">
         <Header/> 
          <Navigation/>
      <Footer/>

@@ -1,6 +1,6 @@
 <template>
    
 
-  <NuxtLayout/> 
+  <NuxtLayout class=" font-['Roboto']"/> 
    
 </template>
